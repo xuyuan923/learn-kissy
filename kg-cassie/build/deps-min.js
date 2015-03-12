@@ -1,0 +1,1 @@
+KISSY.config("requires",{"kg/kg-cassie/1.0.0/index":["node","base"],"kg/kg-cassie/1.0.0/lib/main":["node","base"]});

@@ -57,6 +57,7 @@ var VcGotoTop = Base.extend({
     run: function(){
         var self = this;
         var scrollSpeed = self.get('scrollSpeed');
+        console.log('scrollSpeed:'+scrollSpeed);
         $('body').animate({scrollTop: 0},scrollSpeed,'swing');
     }
 },{
@@ -94,7 +95,7 @@ var VcGotoTop = Base.extend({
         },
         //滚动速度
         scrollSpeed:{
-            value:1
+            value:1000
         },
         //显示的class名
         showClass:{value:'top-show'}

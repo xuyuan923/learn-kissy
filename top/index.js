@@ -56,6 +56,7 @@ var VcGotoTop = Base.extend({
     run: function(){
         var self = this;
         var scrollSpeed = self.get('scrollSpeed');
+        console.log('scrollSpeed:'+scrollSpeed);
         $('body').animate({scrollTop: 0},scrollSpeed,'swing');
     }
 },{

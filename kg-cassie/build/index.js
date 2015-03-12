@@ -1,4 +1,5 @@
-/**
+KISSY.add('kg/kg-cassie/1.0.0/index',["node","base"],function(S ,require, exports, module) {
+ /**
  *
  * 当鼠标在顶部时，显示到底部
  * 当鼠标在底部时，显示到顶部
@@ -48,10 +49,10 @@ var KgCassie = Base.extend({
         var self = this;
         var scrollSpeed = self.get('scrollSpeed');
         var toTopHeight = self.get('toTopHeight');
-        if ($(window).scrollTop() > toTopHeight) {
+        if ($(window).scrollTop() > 100) {
             $('body').animate({scrollTop: 0}, scrollSpeed, 'swing');
         }else{
-            $('body').animate({scrollTop: 100}, scrollSpeed, 'swing');
+            $('body').animate({scrollTop: 1000}, scrollSpeed, 'swing');
         }
     }
 },{
@@ -89,3 +90,5 @@ module.exports = KgCassie;
 
 
 
+
+});
