@@ -34,26 +34,19 @@ var KgCassie = Base.extend({
         //不存在目标节点，使用模板创建个
         if(!$target.length){
             $target = self._create();
+        }else{
+            $target.on('click',function(ev){
+                ev.preventDefault();
+                self.run();
+            });
         }
-        $(window).on('scroll', function (ev) {
-            if($target.length){
-                $target.on('click',function(ev){
-                    ev.halt();
-                    self.run();
-                });
-            }
-        })
     },
     //触发动画滚动
     run: function(){
         var self = this;
         var scrollSpeed = self.get('scrollSpeed');
         var toTopHeight = self.get('toTopHeight');
-        if ($(window).scrollTop() > 100) {
-            $('body').animate({scrollTop: 0}, scrollSpeed, 'swing');
-        }else{
-            $('body').animate({scrollTop: 1000}, scrollSpeed, 'swing');
-        }
+        $('body').animate({scrollTop: 0}, scrollSpeed, 'swing');
     }
 },{
     ATTRS:{

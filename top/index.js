@@ -35,6 +35,7 @@ var VcGotoTop = Base.extend({
         var showPos = self.get('showPos');
         var $target = self.get('$target');
         $(window).on('scroll',function(ev){
+            console.log('$window.scrollTop:'+$(window).scrollTop());
             if ($(window).scrollTop() > showPos) {
                 //不存在目标节点，使用模板创建个
                 if(!$target.length){
@@ -56,7 +57,6 @@ var VcGotoTop = Base.extend({
     run: function(){
         var self = this;
         var scrollSpeed = self.get('scrollSpeed');
-        console.log('scrollSpeed:'+scrollSpeed);
         $('body').animate({scrollTop: 0},scrollSpeed,'swing');
     }
 },{
@@ -74,6 +74,7 @@ var VcGotoTop = Base.extend({
             value:0,
             getter: function(v){
                 if(v>0) return v;
+                console.log('$window.height:'+$(window).height());
                 return $(window).height();
             }
         },
