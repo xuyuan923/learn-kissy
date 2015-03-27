@@ -4,7 +4,7 @@ KISSY.add(function (S, require) {
         IO = require('io'),
         XT = require('xtemplate/runtime'),
         recordTpl = require('./tpl/record-list.xtpl'),
-        DataLazyload = require('kg/datalazyload/2.0.2/'),
+        //DataLazyload = require('kg/datalazyload/2.0.2/'),
         Limitfixed = require('kg/limitfixed/2.0.0/index');
 
     var Interactive = require('./interactive');
@@ -53,20 +53,20 @@ KISSY.add(function (S, require) {
         var getDesc = $('#J_desc'),
             getDescContent = $('#J_desc_content'),
             scriptUrl = getDesc.attr('data-from');//prop 换成 attr
-        var _imgLazyReplace = function(str){
-            var reg = /<\s*img\s+([^>]*?)src\s*=\s*[\'|\"](.*?)[\'|\"]\s*([^>]*?)\/?\s*>/ig,
-                to = '<img $1 src="http://gtms02.alicdn.com/tps/i2/TB1SN33GVXXXXarapXX0deX8pXX-900-600.png" data-ks-lazyload="$2" $3 />';
-            return str.replace(reg, to);
-        };
+        //var _imgLazyReplace = function(str){
+        //    var reg = /<\s*img\s+([^>]*?)src\s*=\s*[\'|\"](.*?)[\'|\"]\s*([^>]*?)\/?\s*>/ig,
+        //        to = '<img $1 src="http://gtms02.alicdn.com/tps/i2/TB1SN33GVXXXXarapXX0deX8pXX-900-600.png" data-ks-lazyload="$2" $3 />';
+        //    return str.replace(reg, to);
+        //};
         try {
             S.getScript(scriptUrl, function () {
                 if (typeof desc !== 'undefined') {
-                    var newDesc = _imgLazyReplace(desc);
-                    S.log(newDesc);
-                    getDescContent.html(newDesc);
-                    new DataLazyload({
-                        container: '#J_desc_content'
-                    });
+                    //var newDesc = _imgLazyReplace(desc);
+                    //S.log(newDesc);
+                    getDescContent.html(desc);
+                    //new DataLazyload({
+                    //    container: '#J_desc_content'
+                    //});
                     _showFlash();
                 } else {
                     getDescContent.html('暂无描述');
